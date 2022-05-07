@@ -1,26 +1,6 @@
 # Como usar o Git e Github na prática
- 
-## Início do vídeo
-
-Oie gente sejam bem vindos a mais um vídeo aqui do canal, eu sou a Rafaella Ballerini e hoje eu vou mostrar pra vocês como utilizamos o GIT na prática
-
-No [vídeo anterior](https://www.youtube.com/watch?v=DqTITcMq68k) eu expliquei os conceitos de alguns termos técnicos que utilizamos quando estamos usando o git, então [nesse vídeo](https://www.youtube.com/watch?v=UBAX-13g8OM) vou mostrar na prática como isso acontece.
-
-## Instalando o GIT
-
-* [Link com os downloads](https://git-scm.com/downloads)
 
 ## Criar um projeto novo
-
-* Criar uma nova pasta no PC pra isso chamada `Git Tutorial`
-
-* Abrir o VSCode nessa pasta
-
-* Criar um novo arquivo `README.md`
-
-* Escrever dentro dele `Olá, nesse projeto você aprenderá alguns comandos do Git`
-
-* Salva o arquivo
 
 Agora então é hora de usarmos o Git
 
@@ -32,19 +12,11 @@ Foi criada uma pastinha `.git` e é ali que toda a mágica acontece, então não
 
 * `git add README.md` para colocar o arquivo na área de stagging 
 
-<img src="https://i1.wp.com/www.markus-gattol.name/misc/mm/si/content/git_git_add.png">
-
 Esse `add` é necessário antes de darmos o commit de fato, mas por que isso? No final do vídeo explico para vocês
 
 * `git commit -m "primeiro commit"` para de fato dar o commit no repositório
 
 * `git branch -M "main"` para alterar o nome da branch principal de `master` para `main` (isso é uma boa prática atualmente recomendada)
-
-## Interfaces Git
-
-Beleza, recebemos a confirmação de que o commit aconteceu, mas isso tá um pouco abstrato ainda né?
-Existem algumas [interfaces legais do git](https://git-scm.com/downloads/guis) que você pode fazer o download para poder visualizar de fato como está o projeto, o que foi alterado em cada commit, quando foi alterado etc.
-Aqui eu vou mostrar pra vocês a usarem direto no Github.
 
 ## Repositório no Github
 
@@ -52,13 +24,7 @@ Aqui eu vou mostrar pra vocês a usarem direto no Github.
 
 Você vai preencher com as informações do projeto, então dar o nome do repositório, colocar uma breve descrição e criar
 
-<img src="https://media.discordapp.net/attachments/831974152667398214/836828773067915274/unknown.png">
-
 Logo depois vai aparecer essa página um pouco cinza e confusa e com vários comandos (pode até perceber que alguns deles jpa usamos), mas o que você tem que fazer é bem simples, apenas copie o link que aparecer para você
-
-<img src="https://media.discordapp.net/attachments/831974152667398214/836828905859186708/unknown.png?width=1440&height=141">
-
-Lembra do conceito de `remote` que eu expliquei pra vocês no último vídeo? Nós iremos utilizá-lo agora
 
 * Para passar o commit do meu repositório local (da minha máquina) para um repositório na plataforma do Github, usamos o `git remote add origin <link do repositório>`
 
@@ -72,7 +38,6 @@ Agora se recarregarmos a página iremos ver o nosso arquivo aqui na plataforma!
 
 ## Alterando e adicionando arquivo
 
-Beleza, agora que temos o nosso repositório no Github configurado direitinho, podemos usar e abusar do que o Git oferece, afinal é pra isso que estamos utilizando ele né?
 Primeira coisa que faremos então é alterar esse arquivo que já commitamos
 
 * Adiciona mais uma frase no arquivo `Essa é uma alteração`
@@ -85,17 +50,14 @@ Primeira coisa que faremos então é alterar esse arquivo que já commitamos
 
 Se olharmos agora o nosso código no Github, ele terá sido alterado, e não só isso, se clicarmos no nome do `commit`, podemos ver exatamente as alterações que foram feitas nele.
 O verde com `+` e o vermelho com `-` mostra, os conteúdos que foram adicionados e editados dentro do código.
-Aqui nesse botão poderemos ver todos os commits já feitos anteriormente, então se clicarmos em algum deles, veremos exatamente o que havia sido alterado, além de claro, vermos o código como era. Incrível né?
+Aqui nesse botão poderemos ver todos os commits já feitos anteriormente, então se clicarmos em algum deles, veremos exatamente o que havia sido alterado, além de claro, vermos o código como era.
 
-<img src="https://media.discordapp.net/attachments/831974152667398214/836830443617648670/unknown.png">
-
-## Branch
+## Branch / Ramificação
 
 Até agora tudo o que fizemos de alterações e mandamos de commit, foi na nossa `main`, que é aquela linha do tempo principal.
 Agora vou mostrar pra vocês como criamos uma branch e depois como que juntamos ela com o código que já está na `main` (lembrando que ela é uma linha cronológica adicional/alternativa a principal)
 E outra, a branch pode ser criada tanto para quando você for fazer uma alteração em um arquivo, quando para adicionar outro arquivo dentro do projeto ou mesmo excluir.
 <br>
-Obs. *Lembrem que eu estou aqui editando um arquivo markdown, porém isso tudo vale para qualquer tipo de arquivo com qualquer extensão*
 
 * Nesse caso vamos adicionar um novo arquivo para desenvolver a nossa feature `Botão`
 
@@ -110,15 +72,13 @@ Esse comando além de criar a branch já entra nela com o checkout, inclusive se
 
 Agora se olharmos o nosso Github, veremos que tem 2 branches, a `main` e a `botao`
 
-<img src="https://media.discordapp.net/attachments/812313742192279612/836820670037622854/unknown.png">
-
 Vamos supor que eu ainda não tivesse terminado de desenvolver o botão, eu poderia continuar tranquilamente na branch `botao` até terminar!
 
 Mas Rafa, e se eu precisasse por algum motivo voltar naquela branch `main` e desenvolver a partir do que deixei lá? Sem problemas, a única coisa que você precisa fazer nesse caso é `git checkout main`, e pra voltar depois é só `git checkout botao` novamente
 
 Beleza! Agora desenvolvi tudo o que queria aqui na branch `botao`, como que junto ela com a main sem problemas?
 
-## Merge
+## Merge / Juntar TUDO
 
 * Agora o que precisamos fazer é ir para a nossa branch principal `git checkout main` e lá faremos o merge com a branch `botao` que criamos, com `git merge botao`
 
@@ -184,12 +144,3 @@ Você irá colocar um nome intuitivo, que demonstre a funcionalidade adicionada 
 
 Depois disso, basta esperar para que o dono da branch original aceite o seu pull request
 
-## Finalização
-
-Existem diversas outras funcionalidades do Git e do Github, porém tenho certeza que com tudo isso que vocês viram hoje vocês já conseguem desenvolver um projeto de uma forma bem legal
-
-Recomendo sempre vocês darem uma olhada na [documentação do Git](https://git-scm.com/doc), pois qualquer dúvida que apareça pode ser respondida por lá na explicação
-
-**Não esqueçam de deixar o like e se inscrever no [canal do Youtube](https://youtube.com/RafaellaBallerini) ❤**
-
-Até semana que vem, um beijo!
